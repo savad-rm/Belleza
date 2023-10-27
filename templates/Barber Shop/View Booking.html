@@ -1,0 +1,49 @@
+{% extends "Barber Shop/home.html" %}
+{% block body %}
+
+<form id="form1" name="form1" method="post" action="">
+  <table  border="5"  class="table table-hover">
+    <tr style="background-color: black;color: white">
+      <td>SI.No</td>
+      <td>Time</td>
+      <td>Date</td>
+      <td>User Name</td>
+      <td>Total Amount</td>
+      <td>From</td>
+      <td>To</td>
+      <td colspan="2" align="center">Status</td>
+
+{#      <td>&nbsp;</td>#}
+{#      <td>&nbsp;</td>#}
+    </tr>
+      {% for i in data %}
+    <tr>
+
+      <td>&nbsp;{{ loop.index }}</td>
+      <td>{{ i['time'] }}&nbsp;</td>
+      <td>&nbsp;{{ i['date'] }}</td>
+      <td>&nbsp;{{ i['name'] }}</td>
+      <td>&nbsp;{{ i['total amount'] }}</td>
+      <td>&nbsp;{{ i['from'] }}</td>
+      <td>{{ i['to'] }}</td>
+
+        &nbsp;{% if i['status'] =="pending"  %}
+      <td>
+
+      <a href="/acceptbooking/{{ i["bookingid"] }}" class="btn btn-success">Accept</a>
+      </td>
+        <td>
+      <a href="/rejectbooking/{{ i["bookingid"] }}" class="btn btn-danger">Reject</a></td>
+    {% elif i['status'] =="accepted"  %}
+  <td colspan="2" align="center">
+
+      <a href="/rejectbooking/{{ i["bookingid"] }}" class="btn btn-danger">Reject</a></td>
+    {% else %}
+  <td colspan="2" align="center">
+         <a href="/acceptbooking/{{ i["bookingid"] }}" class="btn btn-success">Accept</a></td>
+    {% endif %}
+    </tr>
+      {% endfor %}
+  </table>
+</form>
+{% endblock %}

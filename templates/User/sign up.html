@@ -1,0 +1,100 @@
+<!--
+Author: W3layouts
+Author URL: http://w3layouts.com
+License: Creative Commons Attribution 3.0 Unported
+License URL: http://creativecommons.org/licenses/by/3.0/
+-->
+<!DOCTYPE html>
+<html>
+<head>
+<title>Signup</title>
+<link href="/static/signup/css/style.css" rel='stylesheet' type='text/css' />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content=">Un Boxed Sign up Form Responsive, Login form web template, Sign up Web Templates, Flat Web Templates, Login signup Responsive web template, Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony Ericsson, Motorola web design" />
+<!-- //end-smoth-scrolling -->
+<link href="//fonts.googleapis.com/css?family=Rationale" rel="stylesheet">
+<!-- js -->
+<script type="text/javascript" src="/static/signup/js/jquery-2.1.4.min.js"></script>
+<!-- //js -->
+</head>
+<body> 
+	 <div data-vide-bg="/static/signup/videos/typing">
+	 <div class="w3-agile-signup-top">
+	 <h1>Signup Form</h1>
+		<div class="main">
+                <div class="login-top left">
+							<form action="/usersignuppost" method="post" enctype="multipart/form-data">
+							  <input type="text" name="name" class="name" placeholder="Name" required="" pattern="[A-Za-z]{1,20}">
+                                <p>
+                                 <label>
+                                  <input type="radio" name="RadioGroup1" value="male" id="RadioGroup1_0" />
+                                   Male</label>
+                                 <label>
+                                  <input type="radio" name="RadioGroup1" value="female" id="RadioGroup1_1" style="margin-bottom: 30px" />
+                                   Female</label>
+                                 <br />
+                                </p>
+                              <input type="text" name="place" class="place" placeholder="Place" required="" >
+                              <input type="text" name="city" class="city" placeholder="City" required="">
+                              <input type="text" name="state" class="state" placeholder="State" required="">
+                              <input type="text" name="pincode" class="pincode" placeholder="Pincode" required="" >
+                              <input type="text" name="email" class="email" placeholder="Email" required="" pattern="^([a-zA-Z0-9_\-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([a-zA-Z0-9\-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$">
+                              <input type="text" name="phone" class="phone" placeholder="Phone" required="" pattern="[987][0-9]{9}">
+                              <input type="file" name="photo" class="name" placeholder="Photo" required="" style="margin-bottom: 30px" >
+                            <div class="pass">
+							  <input type="password" name="password" id="pass" class="password" placeholder="Password" required="" maxlength="30" minlength="8"  >
+							  <input type="password" name="password" id="confirm_pass" class="password" placeholder="Confirm Password" required="" onkeyup="validate_password()" >
+							</div>
+                                <span id="wrong_pass_alert"></span>
+                            <div class="buttons">
+                                    <button id="create" class="submit_btn" onclick="wrong_pass_alert()">SIGN UP</button>
+{#                                    <input type="submit" value="SIGN UP">#}
+                             </div>
+<script>
+    function validate_password() {
+        var pass=document.getElementById('pass').value;
+        var confirm_pass=document.getElementById('confirm_pass').value;
+        if(pass!=confirm_pass)
+        {
+            document.getElementById('wrong_pass_alert').style.color='red';
+            document.getElementById('wrong_pass_alert').innerHTML='Use same password';
+            document.getElementById('create').disabled=true;
+            document.getElementById('create').style.opacity=(0.4);
+        }
+        else
+        {
+            document.getElementById('wrong_pass_alert').style.color='green';
+            document.getElementById('wrong_pass_alert').innerHTML='Password Matched';
+            document.getElementById('create').disabled=false;
+            document.getElementById('create').style.opacity=(1);
+        }
+    }
+    function wrong_pass_alert() {
+        if(document.getElementById('pass').value!="" && document.getElementById('confirm_pass').value!="")
+        {
+            alert("Your response is submitted");
+        }
+        else
+        {
+            alert("Please fill all the fields");
+        }
+
+    }
+</script>
+
+                             </form>
+								<div class="w3-bottom-text">
+								<h3>Already Have an account<span>?</span></h3>
+								<h4><a href="/">Login</a></h4>
+								</div>
+								<div class="clear"></div>
+                </div>
+		</div>
+	<div class="clear"></div>
+</div>
+</div>
+
+		<script src="/static/signup/js/jquery.vide.min.js"></script>
+</body>
+</html>

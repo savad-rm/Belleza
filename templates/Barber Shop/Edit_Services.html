@@ -1,0 +1,32 @@
+{% extends "Barber Shop/home.html" %}
+{% block body %}
+
+<form action="/editservicepost" method="post" enctype="multipart/form-data" name="form1" id="form1">
+  <table width="353" border="5"  class="table table-hover">
+    <tr>
+      <td width="49">Service Name</td>
+      <td width="288"><label for="textfield"></label>
+      <input type="text" name="servicename" id="textfield" value="{{ data['servicename'] }}" class="form-control" required=""/></td>
+    </tr>
+    <tr>
+      <td>Photo</td>
+      <td><label for="fileField"></label>
+      <input type="file" name="photo" id="fileField" required=""/><img src="{{ data['photo'] }}" alt="" width="100px" height="100px" /></td>
+    </tr>
+    <tr>
+      <td>Service Rate</td>
+      <td><input type="text" name="servicerate" id="textfield2" value="{{ data['servicerate'] }}" class="form-control" required=""/></td>
+    </tr>
+    <tr>
+      <td>Description</td>
+      <td><label for="textarea"></label>
+      <textarea name="description" id="description" cols="45" rows="5" class="form-control" required="" >{{ data['description'] }}</textarea></td>
+    </tr>
+    <tr>
+      <td colspan="2"><div align="center">
+        <input type="submit" name="button" id="button" value="Submit" class="btn btn-success"/>
+      </div></td>
+    </tr>
+  </table>
+</form>
+{% endblock %}

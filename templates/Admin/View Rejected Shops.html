@@ -1,0 +1,36 @@
+{% extends "Admin/home.html" %}
+{% block body %}
+
+<form id="form1" name="form1" method="post" action="/search_rbarber">
+  <table width="200" border="5" style="color: white" class="table table-hover">
+    <tr>
+      <td><label for="textfield"></label>
+      <input type="text" name="search" placeholder="Search Here..." id="textfield" class="form-control"/></td>
+      <td><input type="submit" name="Go" id="" value="Go"  class="btn btn-success" align="middle"/></td>
+    </tr>
+  </table>
+  <table width="377" border="5"  class="table table-hover">
+    <tr style="background-color: black;color: white">
+      <td width="38">SI.No</td>
+      <td width="37">Shop Name</td>
+      <td width="36">Shop Type</td>
+      <td width="51">Address</td>
+      <td width="38">About</td>
+      <td width="33">Email</td>
+      <td width="38">Phone</td>
+    </tr>
+   {% for i in data %}
+    <tr>
+      <td>&nbsp;{{ loop.index }}</td>
+      <td>&nbsp;{{ i['shopname'] }}</td>
+      <td>&nbsp;{{ i['shoptype'] }}</td>
+       <td>Place :{{ i['place']}} <br>City :{{i['city']}} <br>Sate :{{i['state']}} <br>Pincode  :{{i['pincode'] }}</td>
+      <td>{{ i['about'] }}</td>
+      <td>&nbsp;{{ i['email'] }}</td>
+      <td>&nbsp;{{ i['phone'] }}</td>
+    </tr>
+      {% endfor %}
+  </table>
+  <p>&nbsp;</p>
+</form>
+{% endblock %}

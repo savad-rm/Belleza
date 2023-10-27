@@ -1,0 +1,23 @@
+{% extends "Barber Shop/home.html" %}
+{% block body %}
+
+    <form id="form1" name="form1" method="post" action="">
+  <table width="200" border="5"  class="table table-hover">
+    <tr style="background-color: black;color: white">
+      <td>SI.No</td>
+      <td>From</td>
+      <td>To</td>
+      <td>&nbsp;</td>
+    </tr>
+      {% for i in data %}
+    <tr>
+      <td align="center">&nbsp;{{ loop.index }}</td>
+      <td align="center">&nbsp;{{ i['from'] }}</td>
+      <td align="center">&nbsp;{{ i['to'] }}</td>
+      <td align="center"><a href="/deleteslot/{{ i['slotid'] }}" class="btn btn-danger">Delete</a></td>
+    </tr>
+      {% endfor %}
+  </table>
+    <tr><p align="center" ><a href="/Create_Slot#about" class="btn btn-success" >Add</a> </p>        </tr>
+</form>
+{% endblock %}

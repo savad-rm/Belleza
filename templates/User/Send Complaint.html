@@ -1,0 +1,19 @@
+{% extends "User/home.html" %}
+{% block body %}
+
+<form id="form1" name="form1" method="post" action="/sendcomplaint">
+  <table width="200" border="5"  class="table table-hover">
+    <tr><input type="hidden" name="h1" value="{{ data['loginid'] }}">
+      <td>Complaint</td>
+      <td><label for="textfield"></label>
+        <label for="textarea"></label>
+      <textarea name="complaint" id="textarea" cols="45" rows="5" class="form-control" class="form-control" required=""></textarea></td>
+    </tr>
+    <tr>
+      <td colspan="2"><div align="center">
+        <input type="submit" name="button" id="button" value="Send" class="btn btn-success"/>
+      </div></td>
+    </tr>
+  </table>
+</form>
+{% endblock %}

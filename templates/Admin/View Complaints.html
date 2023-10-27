@@ -1,0 +1,44 @@
+{% extends "Admin/home.html" %}
+{% block body %}
+
+
+<form id="form1" name="form1" method="post" action="">
+  <table width="200" border="5"  class="table table-hover">
+    <tr style="background-color: black;color: white">
+      <td>SI.No</td>
+      <td>Date</td>
+      <td>User Name</td>
+      <td>Shop Name</td>
+      <td>Complaint</td>
+      <td>Reply</td>
+        <td></td>
+    </tr>
+      {% for i in data %}
+    <tr>
+      <td>&nbsp;{{ loop.index }}</td>
+      <td>&nbsp;{{ i['date'] }}</td>
+      <td>&nbsp;{{ i['name'] }}</td>
+      <td>{{ i['shopname'] }}</td>
+      <td>&nbsp;{{ i['complaint'] }}</td>
+        <td>{{ i['reply'] }}</td>
+{#       #}
+      <td>
+          {% if i['status']=='pending' %}
+          <a href="/Send_Reply/{{ i['complantid'] }}" class="btn btn-success">Reply</a>
+              {% else %}
+              <a>Replied</a>
+          {% endif %}
+
+
+      </td>
+{#    {% else %}#}
+
+{#    {% endif %}#}
+     
+     
+    </tr>
+      {% endfor %}
+  </table>
+  <p>&nbsp;</p>
+</form>
+{% endblock %}

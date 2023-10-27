@@ -1,0 +1,18 @@
+{% extends "Admin/home.html" %}
+{% block body %}
+
+<form id="form1" name="form1" method="post" action="/sendreplypost">
+  <table width="200" border="5"  class="table table-hover">
+    <tr><input type="hidden" name="h1" value="{{ data['complantid'] }}">
+      <td>Reply</td>
+      <td><label for="textarea"></label>
+      <textarea name="textarea" id="textarea" cols="45" rows="5" class="form-control" required=""></textarea></td>
+    </tr>
+    <tr>
+      <td colspan="2"><div align="center">
+        <input type="submit" name="button" id="button" class="btn btn-success" value="Send" />
+      </div></td>
+    </tr>
+  </table>
+</form>
+{% endblock %}

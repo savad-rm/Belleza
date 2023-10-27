@@ -1,0 +1,30 @@
+{% extends "User/home.html" %}
+{% block body %}
+
+<form id="form1" name="form1" method="post" action="">
+  <table width="200" border="5" class="table table-hover">
+    <tr style="background-color: black;color: white">
+      <td>SI.No</td>
+      <td>Date</td>
+      <td>From</td>
+      <td>To</td>
+      <td>Barbershop</td>
+      <td>Total Amount</td>
+        <td>Status</td>
+        <td> </td>
+    </tr>
+      {% for i in data %}
+
+      <td>&nbsp;{{ loop.index }}</td>
+      <td>&nbsp;{{ i['date'] }}</td>
+      <td>&nbsp;{{ i['from'] }}</td>
+      <td>{{ i['to'] }}&nbsp;</td>
+      <td>&nbsp;{{ i['shopname'] }}</td>
+      <td>{{ i['total amount'] }}&nbsp;</td>
+    <td>{{ i['s'] }}</td>
+          <td><a href="/cancelbooking/{{ i['bookingid'] }}" class="btn btn-danger">Cancel</a></td>
+    </tr>
+      {% endfor %}
+  </table>
+</form>
+{% endblock %}

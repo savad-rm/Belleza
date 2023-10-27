@@ -1,0 +1,67 @@
+{% extends "User/home.html" %}
+{% block body %}
+
+<form action="/editprofileuserpost" method="post" enctype="multipart/form-data" name="form1" id="form1">
+  <table width="200" border="5"  class="table table-hover">
+    <tr>
+      <td style="background-color: cyan;color: black">Name</td>
+      <td><label for="textfield"></label>
+      <input type="text" name="name" id="textfield" value="{{ data['name'] }}" class="form-control" required=""/></td>
+    </tr>
+    <tr>
+      <td style="background-color: cyan;color: black">Gender</td>
+     <td><label for="textfield"></label>
+       <p>
+         <label>
+           <input type="radio" name="gender" value="male" {% if data['gender']=='male' %}checked {% endif %} id="RadioGroup1_0"  />
+           Male</label>
+         <br />
+         <label>
+           <input type="radio" name="gender" value="female" {% if data['gender']=='female' %}checked {% endif %} id="RadioGroup1_1" />
+           Female</label>
+         <br />
+      </p></td>
+    </tr>
+    <tr>
+      <td style="background-color: cyan;color: black">Place</td>
+     <td><label for="textfield"></label>
+      <input type="text" name="place" id="textfield" value="{{ data['place'] }}" class="form-control" required="" /></td>
+    </tr>
+    <tr>
+      <td style="background-color: cyan;color: black">City</td>
+      <td><label for="textfield"></label>
+      <input type="text" name="city" id="textfield" value="{{ data['city'] }}" class="form-control" required=""/></td>
+    </tr>
+    <tr>
+      <td style="background-color: cyan;color: black">State</td>
+      <td><label for="textfield"></label>
+      <input type="text" name="state" id="textfield" value="{{ data['state'] }}" class="form-control" required=""/></td>
+    </tr>
+    <tr>
+      <td style="background-color: cyan;color: black">Pincode</td>
+     <td><label for="textfield"></label>
+      <input type="text" name="pincode" id="textfield"  value="{{ data['pincode'] }}" class="form-control" required=""/></td>
+    </tr>
+    <tr>
+      <td style="background-color: cyan;color: black">Email</td>
+    <td><label for="textfield"></label>
+      <input type="text" name="email" id="textfield"  value="{{ data['email'] }}" class="form-control" required=""/></td>
+    </tr>
+    <tr>
+      <td style="background-color: cyan;color: black">Phone</td>
+     <td><label for="textfield"></label>
+      <input type="text" name="phone" id="textfield" value="{{ data['phone'] }}" class="form-control" required=""/></td>
+    </tr>
+    <tr>
+      <td style="background-color: cyan;color: black">Photo</td>
+      <td><label for="fileField"></label>
+      <input type="file" name="photo" id="fileField" /><img src="{{ data['photo'] }}" alt="" width="100px" height="100px" readonly=""/></td>
+    </tr>
+    <tr>
+      <td colspan="2"><div align="center">
+        <input type="submit" name="button" id="button" value="Update" class="btn btn-success"/>
+      </div></td>
+    </tr>
+  </table>
+</form>
+{% endblock %}

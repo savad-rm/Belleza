@@ -1,0 +1,35 @@
+{% extends "Barber Shop/home.html" %}
+{% block body %}
+
+<link rel="stylesheet" href="/static/viewprofile/scss.css">
+<script src="/static/viewprofile/scss.css"></script>
+
+<div class="profile" style="margin-top: 100px">
+  <figure>
+      <img src="{{ data['photo'] }}" alt="" width="700px" height="700px"/>
+  </figure>
+  <main style="margin-left: 100px">
+    <dl>
+      <dt>Shop Name</dt>
+        <dd><label for="textfield">{{ data['shopname'] }}</label></dd>
+      <dt>Shop Type</dt>
+        <dd><label for="textfield">{{ data['shoptype'] }}</label></dd>
+      <dt>Place</dt>
+        <dd><label for="textfield">{{ data['place'] }}</label></dd>
+      <dt>City</dt>
+        <dd><label for="textfield">{{ data['city'] }}</label></dd>
+      <dt>State</dt>
+        <dd><label for="textfield">{{ data['state'] }}</label></dd>
+      <dt>Pincode</dt>
+        <dd><label for="textfield">{{ data['pincode'] }}</label></dd>
+      <dt>About</dt>
+        <dd><label for="textfield">{{ data['about'] }}</label></dd>
+      <dt>Email</dt>
+        <dd><label for="textfield">{{ data['email'] }}</label></dd>
+      <dt>Phone</dt>
+        <dd><label for="textfield">{{ data['phone'] }}</label></dd>
+      <dt><a href="/Edit_Profile" class="btn btn-success">Edit</a></dt>
+    </dl>
+  </main>
+</div>
+{% endblock %}

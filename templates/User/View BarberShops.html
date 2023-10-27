@@ -1,0 +1,47 @@
+{% extends "User/home.html" %}
+{% block body %}
+
+<form action="" method="post" enctype="multipart/form-data" name="form1" id="form1">
+  <table  class="pull-right">
+    <tr>
+      <td>
+      <input type="text" name="textfield" id="textfield" placeholder="Search Here..." class="form-control" /></td>
+      <td><input type="submit" name="button" id="button" value="Go" class="btn btn-success" /></td>
+    </tr>
+  </table>
+<div class="row" style="margin-top: 10px">
+      {% for i in data %}
+          <div class="col-lg-4.5">
+            <div class="card" style="margin: 10px">
+                              <table style="color: black">
+                            <tr>
+                                <td colspan="2"><b style="color: red">{{ i['shopname'] }}</b></td>
+                              </tr>
+                            <tr>
+                              <td colspan="2"><img src="{{ i['photo'] }}" alt="" width="100px" height="100px" style="margin-left: 20px;margin-bottom: 10px"/></td>
+                            </tr>
+                            <tr >
+                              <td >About</td>
+                              <td>{{ i['about'] }}</td>
+                            </tr>
+                            <tr>
+                              <td>Address</td>
+                              <td>{{ i['place'] }},{{ i['city'] }},{{ i['pincode'] }},{{ i['district'] }}</td>
+                            </tr>
+                            <tr>
+                              <td>Contact</td>
+                              <td>{{ i['phone'] }},{{ i['email'] }}</td>
+                            </tr>
+                            <tr>
+                              <td><a href="/Booking/{{ i['loginid'] }}#user" class="btn btn-success" style="margin-top: 10px">BookNow</a></td>
+                              <td><a href="/Send_Complaint/{{ i['loginid'] }}#user" class="btn btn-danger" style="margin-top: 10px;margin-left: 5px">Send Complaint</a></td>
+                            </tr>
+                          </table>
+            </div>
+          </div>
+          {% endfor %}
+
+</div>
+
+</form>
+{% endblock %}

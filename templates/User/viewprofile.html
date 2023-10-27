@@ -1,0 +1,32 @@
+{% extends "User/home.html" %}
+{% block body %}
+
+<link rel="stylesheet" href="/static/viewprofile/scss.css">
+<script src="/static/viewprofile/scss.css"></script>
+
+<div class="profile" >
+      <img src="{{ data['photo'] }}" alt="" width="200px" height="200px"/>
+  </figure>
+  <main style="margin-left: 100px;margin-top: 80px">
+    <dl>
+      <dt>Name</dt>
+        <dd><label for="textfield">{{ data['name'] }}</label></dd>
+      <dt>Gender</dt>
+        <dd><label for="textfield">{{ data['gender'] }}</label></dd>
+      <dt>Place</dt>
+        <dd><label for="textfield">{{ data['place'] }}</label></dd>
+      <dt>City</dt>
+        <dd><label for="textfield">{{ data['city'] }}</label></dd>
+      <dt>State</dt>
+        <dd><label for="textfield">{{ data['state'] }}</label></dd>
+      <dt>Pincode</dt>
+        <dd><label for="textfield">{{ data['pincode'] }}</label></dd>
+      <dt>Email</dt>
+        <dd><label for="textfield">{{ data['email'] }}</label></dd>
+      <dt>Phone</dt>
+        <dd><label for="textfield">{{ data['phone'] }}</label></dd>
+      <dt><a href="/Edit_Profile_User#user" class="btn btn-success">Edit</a></dt>
+    </dl>
+  </main>
+</div>
+{% endblock %}

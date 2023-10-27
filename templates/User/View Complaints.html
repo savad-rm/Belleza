@@ -1,0 +1,26 @@
+{% extends "User/home.html" %}
+{% block body %}
+
+<form id="form1" name="form1" method="post" action="">
+  <table width="200" border="5"  class="table table-hover">
+    <tr style="background-color: black;color: white">
+      <td>SI.No</td>
+      <td>Date</td>
+      <td>Barbershop</td>
+      <td>Complaint</td>
+      <td>Status</td>
+      <td>Reply</td>
+    </tr>
+      {% for i in data %}
+    <tr>
+      <td>{{ loop.index }}&nbsp;</td>
+      <td>{{ i['date'] }}&nbsp;</td>
+      <td>&nbsp;{{ i['shopname'] }}</td>
+      <td>&nbsp;{{ i['complaint'] }}</td>
+      <td>&nbsp;{{ i['status'] }}</td>
+      <td>&nbsp;{{ i['reply'] }}</td>
+    </tr>
+      {% endfor %}
+  </table>
+</form>
+{% endblock %}

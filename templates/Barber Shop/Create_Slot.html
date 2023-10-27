@@ -1,0 +1,23 @@
+{% extends "Barber Shop/home.html" %}
+{% block body %}
+
+<form action="/Create_slot_post" method="post" enctype="multipart/form-data" name="form1" id="form1">
+  <table width="353" border="5"  class="table table-hover">
+    <tr>
+      <td width="49">From</td>
+      <td width="288"><label for="textfield"></label>
+      <input type="time" name="from" id="textfield" class="form-control" required=""/></td>
+    </tr>
+    <tr>
+      <td>To</td>
+      <td><label for="fileField"></label>
+      <input type="time" name="to" id="textfield" class="form-control" required=""/></td>
+    </tr>
+    <tr>
+      <td colspan="2"><div align="center">
+        <input type="submit" name="button" id="button" value="Add" class="btn btn-success"/>
+      </div></td>
+    </tr>
+  </table>
+</form>
+{% endblock %}
